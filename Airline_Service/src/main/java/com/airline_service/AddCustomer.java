@@ -266,7 +266,7 @@ public class AddCustomer extends javax.swing.JInternalFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setText("Delete");
+        jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -368,6 +368,7 @@ public class AddCustomer extends javax.swing.JInternalFrame {
             
             pre.executeUpdate();
             JOptionPane.showMessageDialog(null,"Customer Added Successfully");
+            this.setVisible(false);
             
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AddCustomer.class.getName()).log(Level.SEVERE, null, ex);
@@ -378,6 +379,7 @@ public class AddCustomer extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

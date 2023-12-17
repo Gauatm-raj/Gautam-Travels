@@ -484,6 +484,8 @@ public class BookTicket extends javax.swing.JInternalFrame {
             }else{
                 JOptionPane.showMessageDialog(null,"Customer does not exist");
             }
+            
+            this.setVisible(false);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(SearchCustomer.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -522,6 +524,8 @@ public class BookTicket extends javax.swing.JInternalFrame {
             pre.executeUpdate();
             JOptionPane.showMessageDialog(null,"Ticket Booked Successfully");
             
+            this.setVisible(false);
+            
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(AddCustomer.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
@@ -531,6 +535,7 @@ public class BookTicket extends javax.swing.JInternalFrame {
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
     }//GEN-LAST:event_jButton6ActionPerformed
 
     private void toActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_toActionPerformed
