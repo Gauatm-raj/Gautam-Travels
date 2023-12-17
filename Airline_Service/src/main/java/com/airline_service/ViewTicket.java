@@ -245,29 +245,20 @@ public class ViewTicket extends javax.swing.JInternalFrame {
                 first.setText(rs.getString("FirstName"));
                 last.setText(rs.getString("LastName"));
                 gender.setText(rs.getString("Gender"));
-                
-                String arr=rs.getString("BusId");
-                PreparedStatement x=con.prepareStatement("select Arrival from bus where BusId=arr");
-                 x.setString(1, arr);
-                ResultSet y=x.executeQuery();
-                y.next();
-                to.setText(y.getString("Arrival"));
-                
-                String a=rs.getString("BusId");
-                PreparedStatement b=con.prepareStatement("select Arrival from bus where BusId=a");
-                 b.setString(1, a);
-                ResultSet c=b.executeQuery();
-                c.next();
-                
-                from.setText(c.getString("Deaparture"));
                 contact.setText(rs.getString("Contact"));
                 
-                String s=rs.getString("BusId");
-                PreparedStatement vs=con.prepareStatement("select BusName from bus where BusId=s");
-                 vs.setString(1, s);
-                ResultSet vc=vs.executeQuery();
-                vc.next();
-                busname.setText(vc.getString("BusName"));
+                String arr=rs.getString("BusId");
+                PreparedStatement x=con.prepareStatement("select BusName,Arrival,Deaparture from bus where BusId=?");
+                 x.setString(1, arr);
+                ResultSet y=x.executeQuery();
+                if(y.next()!=false){
+                  busname.setText(y.getString("BusName"));
+                  to.setText(y.getString("Arrival"));
+                
+                  from.setText(y.getString("Deaparture"));
+             
+                }
+               
                 
             }else{
                 JOptionPane.showMessageDialog(null,"Ticket does not exist");
